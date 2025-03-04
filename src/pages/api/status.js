@@ -2,7 +2,7 @@ import { query } from "../../../database"; // Adjust path as needed
 
 export default async function getStatus(req, res) {
   try {
-    const versionResult = await query("SHOW version;");
+    const versionResult = await query("SHOW server_version;"); // <---AQUI
     console.log("PostgreSQL version:", versionResult.rows[0]);
 
     res.status(200).json({
